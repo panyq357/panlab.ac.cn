@@ -1,0 +1,25 @@
+{# navbar #}
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <div class="container">
+    <a href="{{ url_for("index") }}" class="navbar-brand">Pan Lab</a>
+    <button class="navbar-toggler" type="bottom" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        {% set nav_item_list = [
+        (url_for("posts"), "posts", "博文"),
+        (url_for("tools"), "tools", "小工具"),
+        ] %}
+        {% set active_page = active_page|default('index') %}
+        {% for href, id, caption in nav_item_list %}
+        <li class="nav-item">
+          <a href="{{href}}" class="nav-link {% if active_page == id %}active{% endif %}">
+            {{caption}}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>

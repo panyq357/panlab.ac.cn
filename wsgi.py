@@ -1,0 +1,2 @@
+from panlab import app
+

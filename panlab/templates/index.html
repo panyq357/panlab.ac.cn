@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% set active_page = "index" %}
+
+{% block head %}
+<title>Pan Lab</title>
+<style type="text/css">
+body{ /* parent of Header, content & footer. */
+  text-align:center;
+  display:grid;
+  grid-template-rows: auto 1fr auto;
+  min-height:100vh;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="p-5">
+  <div class="container">
+    <p>我会一点 Python 🐍</p>
+    <p>我会一点 R</p>
+    <p>我用 Vim 敲代码</p>
+    <p>我做过一些分子生物学实验</p>
+    <p>我种水稻 🌾</p>
+  </div>
+</section>
+<footer id="footer" class="p-3 bg-dark text-white text-center">
+  <div class="container">
+    <a href="https://beian.miit.gov.cn/"
+       target="_blank"
+       class="text-secondary text-decoration-none"
+       >互联网ICP备案：京ICP备2023001986</a>
+  </div>
+</footer>
+{% endblock %}
